@@ -1,7 +1,25 @@
 /* CONTAINER */
 .container{
   width: 100%;
-  max-width: 1240px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+@include mobile-first(320px) {
+  .container{
+    padding: 0 32px;
+  }
+}
+
+@include mobile-first(768px) {
+  .container{
+    padding: 0 39px;
+  }
+}
+
+@include mobile-first(1024px) {
+  .container{
+    padding: 0 20px;
+  }
 }

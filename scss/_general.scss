@@ -19,16 +19,19 @@ img{
   height: auto;
 }
 
+h1,
+h2,
+h3{
+  font-family: "Ibarra Real Nova", "Arial",sans-serif;
+}
+
 body{
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
-  /* font-family: "Roboto", "Arial", sans-serif; */
-  /* font-size: 16px; */
-  /* font-weight: 400; */
-  /* line-height: var(--main-line-height); */
+  font-family: "Public Sans", "Times New Roman", serif;
 }
 
 /* STICKY-FOOTER */

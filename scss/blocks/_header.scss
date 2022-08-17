@@ -1,0 +1,145 @@
+.site-header{
+  position: relative;;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.header-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-box__btn{
+  width: 24px;
+  height: 13px;
+  @extend %button-unstyle;
+  background-image: url("../images/burger.svg");
+  background-repeat: no-repeat;
+}
+
+.site-header--open .header-box__btn{
+  width: 18px;
+  height: 19px;
+  background-image: url("../images/close.svg");
+}
+
+.navigation{
+  display: none;
+  width: 100%;
+  max-width: 315px;
+}
+
+.site-header--open .navigation{
+  width: 100%;
+  max-width: 223px;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 80%;
+  right: 20px;
+  background-color: var(--text-color);
+  animation-name: slidedown;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.navigation__list{
+  display: flex;
+  align-items: center;
+  @include list-unstyle()
+}
+
+.site-header--open .navigation__list{
+  padding: 40px 0;
+  flex-direction: column;
+}
+
+.navigation__item:not(:last-child){
+  margin-right: 43px;
+}
+
+.site-header--open .navigation__item:not(:last-child){
+  margin-right: 0;
+  margin-bottom: 32px;
+}
+
+.navigation__link{
+  @include link-unstyle;
+  font-family: "Public Sans", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  color: var(--text-color);
+}
+
+.navigation__link--active{
+  color: var(--active-color);
+}
+
+.site-header--open .navigation__link{
+  color: var(--white);
+}
+
+@include mobile-first(600px){
+  .header-box__btn{
+    display: none;
+  }
+
+  .navigation{
+    display: block;
+  }
+
+  .site-header--open .navigation{
+    max-width: 315px;
+    display: block;
+    position: static;
+    top: 0;
+    background-color: transparent;
+  }
+
+  .site-header--open .navigation__list{
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .site-header--open .navigation__item:not(:last-child){
+    margin-right: 43px;
+    margin-bottom: 0;
+  }
+
+  .site-header--open .navigation__link{
+    color: var(--text-color);
+  }
+
+  .site-header--open .navigation__link--active{
+    color: var(--active-color);
+  }
+}
+
+@include mobile-first(768px){
+  .site-header{
+    padding-top: 64px;
+    padding-bottom: 47px;
+  }
+}
+
+@include mobile-first(1024px){
+  .site-header{
+    padding-bottom: 54px;
+  }
+}
+
+@keyframes slidedown {
+
+  from{
+    transform: translateY(-500px);
+  }
+
+  to{
+    transform: translateY(0);
+  }
+
+}

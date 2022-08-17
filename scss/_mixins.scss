@@ -41,11 +41,11 @@
   text-decoration: none;
 }
 
-@mixin psevdoelements($display:inline-block, $width, $height, $content: ""){
-  display: $display;
+@mixin psevdoelements($width, $height){
+  display: inline-block;
   width: $width;
   height: $height;
-  content: $content;
+  content: "";
 }
 
 
@@ -67,8 +67,7 @@
   }
 }
 
-@mixin typography-styles($style:normal, $size:16px, $line-height:1.15,$weight:400, $text-align:left, $color:#000) {
-  font-style: $style;
+@mixin typography-styles($size:16px, $line-height:1.15,$weight:400, $text-align:left, $color:#000) {
   font-size: $size;
   line-height: $line-height;
   font-weight: $weight;
@@ -81,9 +80,3 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-
-
-
-
-

@@ -76,13 +76,15 @@
 @include mobile-first(500px){
   .hero__wrapper{
     height: 600px;
-    background-image: url("../images/hero-bg-tb.png");
+    background-image: url("../../images/hero-bg-tb.png");
     background-position: center;
   }
 
   @include bgRetinaImages{
-    background-image: url("../images/hero-bg-tb@2x.png");
-    background-position: center;
+    .hero__wrapper{
+      background-image: url("../../images/hero-bg-tb@2x.png");
+      background-position: center;
+    }
   }
 
   .hero__info{
@@ -110,7 +112,9 @@
   }
 
   @include bgRetinaImages{
-    background-image: url("../images/hero-bg@2x.png");
+    .hero__wrapper{
+      background-image: url("../images/hero-bg@2x.png");
+    }
   }
 }
 
